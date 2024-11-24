@@ -329,18 +329,22 @@ def push_notification(request, id):
 def webMasterInfo(request):
     try:
         app_config = AppConfig.objects.all()
-        app_config_data = AppConfigSerializer(app_config, many=True).data if app_config else {}
+        app_config_data = AppConfigSerializer(app_config, many=True).data if app_config else []
 
         web_details = WebsiteDetail.objects.all()
-        web_details_data = WebsiteDetailSerializer(web_details, many=True).data if web_details else {}
+        web_details_data = WebsiteDetailSerializer(web_details, many=True).data if web_details else []
 
         menus = Menu.objects.all()
-        menus_data = MenuSerializer(menus, many=True).data if menus else {}
+        menus_data = MenuSerializer(menus, many=True).data if menus else []
+
+        add_mob = AddMob.objects.all()
+        add_mob_data = AddMobSerializer(add_mob, many=True).data if add_mob else []
 
         response_dict = {
             'app_config': app_config_data,
             'web_details': web_details_data,
-            'menus': menus_data
+            'menus': menus_data,
+            'add_mob': add_mob_data
         }
 
         return Response(response_dict, status=status.HTTP_200_OK)

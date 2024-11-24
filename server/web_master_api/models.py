@@ -66,7 +66,7 @@ class AppConfig(models.Model):
     app_name = models.CharField(max_length=100)
     app_url = models.CharField(max_length=100)
     primary_color = models.CharField(max_length=100)
-    menu_item = models.CharField(max_length=100)
+    menu_item = models.CharField(max_length=100, blank=True, null=True)
     app_logo = models.ImageField(upload_to=upload_path, null=True, blank=True)
 
     def save(self, *args, **kwargs):
