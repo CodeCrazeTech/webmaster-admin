@@ -142,7 +142,7 @@ const Menus = () => {
                     >
                       <div className="w-full flex justify-center sm:justify-start sm:w-auto">
                         <img
-                          className="object-cover w-20 h-20 rounded-md shadow-md border"
+                          className="object-cover min-w-10 min-h-10 rounded-md shadow-md border"
                           src={API_DOMAIN + item.menu_icon}
                           alt={item.title}
                         />
@@ -151,7 +151,7 @@ const Menus = () => {
                         <div className="font-display text-xl font-semibold text-gray-900 dark:text-white">
                           {item.title}
                         </div>
-                        <div className="underline text-xs">
+                        <div className="underline text-xs w-full">
                           <a
                             href={item.url}
                             target="_blank"

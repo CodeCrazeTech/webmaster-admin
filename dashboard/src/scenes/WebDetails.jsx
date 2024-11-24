@@ -81,7 +81,7 @@ const WebDetails = () => {
           </div>
           <div className="flex flex-col gap-1">
             <div className="font-display text-xl font-semibold text-gray-900 dark:text-white">{item.title}</div>
-            <div className="underline text-xs text-gray-900 dark:text-white">
+            <div className="underline text-xs text-gray-900 dark:text-white w-full">
               <a
                 href={item.web_url}
                 target="_blank"
